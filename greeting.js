@@ -17,12 +17,14 @@ function greetTwoName(name){
     }
     else if(name.length > 2){
         let str = `Hello, ${name[0]}, ${name[1]}`;
-        for(let i = 2; i < name.length - 1; i++){
+        for(let i = 2; i < name.length - 1; i++) {
             str += `, ${name[i]}`;
         }
         str += ` and ${name[name.length-1]}.`;
         return str;
     }
 }
+
+
 
 module.exports = greet, greetTwoName

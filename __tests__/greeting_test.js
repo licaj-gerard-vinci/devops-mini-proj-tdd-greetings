@@ -29,3 +29,7 @@ test('returns: Hello, Amy, Brian and Charlotte given: ["Amy", "Brian", "Charlott
 test('returns: Hello, Amy, Brian, Dirna and Charlotte given: ["Amy", "Brian", "Charlotte", "Dirna"]', () => {
     expect(greet(["Amy","Brian","Dirna","Charlotte"])).toBe("Hello, Amy, Brian, Dirna and Charlotte.");
 })
+
+test('returns: Hello, Amy and Charlotte. AND HELLO BRIAN given: ["Amy", "BRIAN", "Charlotte"]', () => {
+    expect(greet(["Amy", "BRIAN", "Charlotte"])).toBe("Hello, Amy and Charlotte. AND HELLO BRIAN!");
+})
