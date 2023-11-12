@@ -18,3 +18,7 @@ test('returns: HELLO, JERRY given: JERRY', () => {
     expect(greet("JERRY")).toBe("HELLO, JERRY!");
 })
 
+test('returns: Hello, Jill and Jane given: ["Jill", "Jane"]', () => {
+    expect(greet(["Jill", "Jane"])).toMatch("Hello, Jill and Jane.");
+})
+
