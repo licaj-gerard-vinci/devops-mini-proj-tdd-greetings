@@ -22,3 +22,6 @@ test('returns: Hello, Jill and Jane given: ["Jill", "Jane"]', () => {
     expect(greet(["Jill", "Jane"])).toMatch("Hello, Jill and Jane.");
 })
 
+test('returns: Hello, Amy, Brian and Charlotte given: ["Amy", "Brian", "Charlotte"]', () => {
+    expect(greet(["Amy", "Brian", "Charlotte"])).toBe("Hello, Amy, Brian and Charlotte.");
+})
