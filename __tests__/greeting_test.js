@@ -14,3 +14,7 @@ test('returns: Hello, my friend given: ""', () => {
     expect(greet("")).toBe("Hello, my friend.");
 })
 
+test('returns: HELLO, JERRY given: JERRY', () => {
+    expect(greet("JERRY")).toBe("HELLO, JERRY!");
+})
+
