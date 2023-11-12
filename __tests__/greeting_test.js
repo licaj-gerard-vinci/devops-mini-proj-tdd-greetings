@@ -19,6 +19,6 @@ test('returns: HELLO, JERRY given: JERRY', () => {
 })
 
 test('returns: Hello, Jill and Jane given: ["Jill", "Jane"]', () => {
-    expect(helloWorld(["Jill", "Jane"])).toMatch("Hello, Jill and Jane.");
+    expect(greet(["Jill", "Jane"])).toMatch("Hello, Jill and Jane.");
 })
 
