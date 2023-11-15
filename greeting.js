@@ -1,28 +1,53 @@
-function greet(name) {
-    if(Array.isArray(name)){
-        return greetTwoName(name);
+function greet (name) {
+    if (Array.isArray(name)) {
+      return greetTwoName(name)
     }
-    if(!name || name === null || name === ""){
-        return 'Hello, my friend.';
+    if (!name || name === null || name === '') {
+      return 'Hello, my friend.'
     }
-    if(name === name.toUpperCase()){
-        return `HELLO, ${name}!`;
+    if (name === name.toUpperCase()) {
+      return `HELLO, ${name}!`
     }
-    return `Hello, ${name}.`;
-}
-
-function greetTwoName(name){
-    if(name.length === 2){
-        return `Hello, ${name[0]} and ${name[1]}.`
+    return `Hello, ${name}.`
+  }
+  
+  function greetTwoName (name) {
+    const sortedNames = sortArray(name)
+    let words = lowerNames(sortedNames[0])
+  
+    if (sortedNames[1].length > 0) {
+      words += upperNames(sortedNames[1])
     }
-    else if(name.length > 2){
-        let str = `Hello, ${name[0]}, ${name[1]}`;
-        for(let i = 2; i < name.length - 1; i++){
-            str += `, ${name[i]}`;
-        }
-        str += ` and ${name[name.length-1]}.`;
-        return str;
+    return words
+  }
+  
+  function sortArray (name) {
+    const lowerCaseNames = []
+    const upperCaseNames = []
+    for (value of name) {
+      if (value === value.toUpperCase()) upperCaseNames.push(value)
+      else lowerCaseNames.push(value)
     }
-}
-
-module.exports = greet, greetTwoName
+    return [lowerCaseNames, upperCaseNames]
+  }
+  
+  function lowerNames (names) {
+    let str = `Hello`
+    for (let i = 0; i < names.length - 1; i++) {
+      str += `, ${names[i]}`
+    }
+    str += ` and ${names[names.length - 1]}.`
+    return str
+  }
+  function upperNames (names) {
+    const wordsList = ['HELLO', 'AND']
+    let words = ` ${wordsList[1].toUpperCase()} ${wordsList[0].toUpperCase()} `
+    for (let i = 0; i < names.length; i++) {
+      words += names[i]
+    }
+    words += '!'
+    return words
+  }
+  
+  module.exports = greet, greetTwoName
+  
