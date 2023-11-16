@@ -8,7 +8,6 @@ function greet (name) {
   if (name === name.toUpperCase()) {
     return `HELLO, ${name}!`
   }
-
   return `Hello, ${name}.`
 }
 
@@ -25,10 +24,10 @@ function greetTwoName (name) {
 function sortArray (name) {
   const lowerCaseNames = []
   const upperCaseNames = []
-  let value
-  for (value of name) {
-    if (value === value.toUpperCase()) upperCaseNames.push(value)
-    else lowerCaseNames.push(value)
+  let str = ''
+  for (str of name) {
+    if (str === str.toUpperCase()) upperCaseNames.push(str)
+    else lowerCaseNames.push(str)
   }
   return [lowerCaseNames, upperCaseNames]
 }
